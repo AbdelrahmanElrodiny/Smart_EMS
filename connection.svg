@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="820" viewBox="0 0 1100 820" font-family="Segoe UI, Arial, sans-serif">
+  <!-- ===================== Background ===================== -->
+  <rect width="1100" height="820" fill="#0d1117"/>
+  <text x="550" y="40" text-anchor="middle" fill="#58a6ff" font-size="26" font-weight="700">🌿 Smart-EMS — ESP32 Wiring Diagram</text>
+  <text x="550" y="64" text-anchor="middle" fill="#8b949e" font-size="13">Smart Environmental Monitoring System v3.0</text>
+
+  <!-- ===================== Legend ===================== -->
+  <g font-size="12">
+    <rect x="40" y="84" width="20" height="10" rx="2" fill="#f0883e"/><text x="66" y="93" fill="#c9d1d9">I²C (SDA/SCL)</text>
+    <rect x="180" y="84" width="20" height="10" rx="2" fill="#3fb950"/><text x="206" y="93" fill="#c9d1d9">Analog in</text>
+    <rect x="300" y="84" width="20" height="10" rx="2" fill="#a371f7"/><text x="326" y="93" fill="#c9d1d9">Digital out</text>
+    <rect x="430" y="84" width="20" height="10" rx="2" fill="#58a6ff"/><text x="456" y="93" fill="#c9d1d9">UART</text>
+    <rect x="520" y="84" width="20" height="10" rx="2" fill="#db61a2"/><text x="546" y="93" fill="#c9d1d9">Digital in (button)</text>
+    <rect x="700" y="84" width="20" height="10" rx="2" fill="#e34c4c"/><text x="726" y="93" fill="#c9d1d9">Power / GND</text>
+  </g>
+
+  <!-- ===================== ESP32 (center) ===================== -->
+  <g>
+    <rect x="430" y="300" width="240" height="260" rx="10" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+    <rect x="430" y="300" width="240" height="34" rx="10" fill="#21262d"/>
+    <text x="550" y="323" text-anchor="middle" fill="#58a6ff" font-size="18" font-weight="700">ESP32</text>
+
+    <!-- left pins -->
+    <g font-size="12" fill="#c9d1d9" text-anchor="start">
+      <text x="442" y="362">21 · SDA</text>
+      <text x="442" y="388">22 · SCL</text>
+      <text x="442" y="414">34 · MQ AO</text>
+      <text x="442" y="440">35 · MIC AO</text>
+      <text x="442" y="466">18 · BTN_H</text>
+      <text x="442" y="492">19 · BTN_M</text>
+      <text x="442" y="530">3V3 / GND</text>
+    </g>
+    <!-- right pins -->
+    <g font-size="12" fill="#c9d1d9" text-anchor="end">
+      <text x="658" y="362">GPIO 25 ·</text>
+      <text x="658" y="388">GPIO 26 ·</text>
+      <text x="658" y="414">GPIO 27 ·</text>
+      <text x="658" y="440">GPIO 32 ·</text>
+      <text x="658" y="492">TX2 17 ·</text>
+      <text x="658" y="518">RX2 16 ·</text>
+    </g>
+  </g>
+
+  <!-- ===================== Peripheral boxes ===================== -->
+  <!-- BMP280 (top-left) -->
+  <g>
+    <rect x="60" y="160" width="180" height="60" rx="8" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+    <text x="150" y="186" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">BMP280</text>
+    <text x="150" y="206" text-anchor="middle" fill="#8b949e" font-size="11">Temp + Pressure · I²C</text>
+  </g>
+  <!-- DS1307 (left) -->
+  <g>
+    <rect x="60" y="250" width="180" height="60" rx="8" fill="#161b22" stroke="#f0883e" stroke-width="1.5"/>
+    <text x="150" y="276" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">DS1307 RTC</text>
+    <text x="150" y="296" text-anchor="middle" fill="#8b949e" font-size="11">Real-time clock · I²C</text>
+  </g>
+  <!-- MQ-135 (left-lower) -->
+  <g>
+    <rect x="60" y="395" width="180" height="60" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+    <text x="150" y="421" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">MQ-135</text>
+    <text x="150" y="441" text-anchor="middle" fill="#8b949e" font-size="11">Air quality · 10k/20k divider</text>
+  </g>
+  <!-- Microphone (left-lower-2) -->
+  <g>
+    <rect x="60" y="475" width="180" height="60" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.5"/>
+    <text x="150" y="501" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">Microphone</text>
+    <text x="150" y="521" text-anchor="middle" fill="#8b949e" font-size="11">Noise level · analog</text>
+  </g>
+  <!-- Buttons (bottom-left) -->
+  <g>
+    <rect x="60" y="600" width="180" height="70" rx="8" fill="#161b22" stroke="#db61a2" stroke-width="1.5"/>
+    <text x="150" y="626" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">Buttons</text>
+    <text x="150" y="646" text-anchor="middle" fill="#8b949e" font-size="11">Hour / Minute set</text>
+    <text x="150" y="662" text-anchor="middle" fill="#8b949e" font-size="11">→ GND (INPUT_PULLUP)</text>
+  </g>
+
+  <!-- LEDs (top-right) -->
+  <g>
+    <rect x="860" y="160" width="180" height="90" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="1.5"/>
+    <text x="950" y="184" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">Status LEDs</text>
+    <circle cx="892" cy="214" r="9" fill="#3fb950"/><text x="908" y="218" fill="#8b949e" font-size="11">Good</text>
+    <circle cx="950" cy="214" r="9" fill="#f0883e"/><text x="966" y="218" fill="#8b949e" font-size="11">Mod</text>
+    <circle cx="1008" cy="214" r="9" fill="#e34c4c"/><text x="990" y="240" fill="#8b949e" font-size="11">Danger</text>
+  </g>
+  <!-- Buzzer (right) -->
+  <g>
+    <rect x="860" y="290" width="180" height="60" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="1.5"/>
+    <text x="950" y="316" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">Active Buzzer</text>
+    <text x="950" y="336" text-anchor="middle" fill="#8b949e" font-size="11">Alarm on Danger</text>
+  </g>
+  <!-- DWIN (right-lower) -->
+  <g>
+    <rect x="860" y="430" width="180" height="80" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="950" y="456" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">DWIN DGUS II</text>
+    <text x="950" y="476" text-anchor="middle" fill="#8b949e" font-size="11">800×480 touch · UART</text>
+    <text x="950" y="492" text-anchor="middle" fill="#8b949e" font-size="11">RX2 ← TX · TX2 → RX</text>
+  </g>
+  <!-- WiFi cloud (bottom-right) -->
+  <g>
+    <rect x="860" y="560" width="180" height="80" rx="8" fill="#161b22" stroke="#238636" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="950" y="586" text-anchor="middle" fill="#f0f6fc" font-size="15" font-weight="700">📡 WiFi SoftAP</text>
+    <text x="950" y="606" text-anchor="middle" fill="#8b949e" font-size="11">SSID: Smart-EMS</text>
+    <text x="950" y="622" text-anchor="middle" fill="#8b949e" font-size="11">http://192.168.4.1</text>
+  </g>
+
+  <!-- ===================== Connections ===================== -->
+  <!-- I2C bus: BMP280 + DS1307 share SDA/SCL -->
+  <path d="M240 185 L335 185 L335 358 L442 358" fill="none" stroke="#f0883e" stroke-width="2"/>
+  <path d="M240 280 L350 280 L350 384 L442 384" fill="none" stroke="#f0883e" stroke-width="2"/>
+  <text x="345" y="175" fill="#f0883e" font-size="11">SDA/SCL bus (shared)</text>
+
+  <!-- MQ-135 analog -->
+  <path d="M240 425 L380 425 L380 410 L442 410" fill="none" stroke="#3fb950" stroke-width="2"/>
+  <!-- Microphone analog -->
+  <path d="M240 505 L400 505 L400 436 L442 436" fill="none" stroke="#3fb950" stroke-width="2"/>
+
+  <!-- Buttons -->
+  <path d="M240 630 L410 630 L410 462 L442 462" fill="none" stroke="#db61a2" stroke-width="2"/>
+  <path d="M240 645 L420 645 L420 488 L442 488" fill="none" stroke="#db61a2" stroke-width="2"/>
+
+  <!-- LEDs (3 lines from right pins) -->
+  <path d="M658 358 L760 358 L760 200 L860 200" fill="none" stroke="#a371f7" stroke-width="2"/>
+  <path d="M658 384 L745 384 L745 215 L860 215" fill="none" stroke="#a371f7" stroke-width="2"/>
+  <path d="M658 410 L730 410 L730 230 L860 230" fill="none" stroke="#a371f7" stroke-width="2"/>
+
+  <!-- Buzzer -->
+  <path d="M658 436 L775 436 L775 320 L860 320" fill="none" stroke="#a371f7" stroke-width="2"/>
+
+  <!-- DWIN UART -->
+  <path d="M658 488 L760 488 L760 462 L860 462" fill="none" stroke="#58a6ff" stroke-width="2"/>
+  <path d="M658 514 L745 514 L745 482 L860 482" fill="none" stroke="#58a6ff" stroke-width="2"/>
+
+  <!-- WiFi (wireless dashed from ESP32 body) -->
+  <path d="M670 540 L800 600 L860 600" fill="none" stroke="#238636" stroke-width="2" stroke-dasharray="5 4"/>
+
+  <!-- footer -->
+  <text x="550" y="790" text-anchor="middle" fill="#484f58" font-size="12">GPIO 34 / 35 are input-only · Use a voltage divider on MQ-135 to keep ADC ≤ 3.3 V</text>
+</svg>
