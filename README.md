@@ -16,7 +16,7 @@ A real-time environmental monitoring station built around the **ESP32**. It read
 
 ## 📸 Gallery
 
-| ![Hardware build](photo5.jpeg) 
+| ![Hardware build](docs/photo5.jpeg) 
 
 **Wiring diagram:**
 
