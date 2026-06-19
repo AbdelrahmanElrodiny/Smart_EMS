@@ -16,18 +16,12 @@ A real-time environmental monitoring station built around the **ESP32**. It read
 
 ## 📸 Gallery
 
-> Drop your own photos/GIFs into a `docs/` folder and they'll show up here.
-> Replace the placeholder paths below with your actual file names.
-
-| Hardware Build | Web Dashboard | DWIN Display |
-|:---:|:---:|:---:|
-| ![Hardware build](docs/hardware.jpg) | ![Web dashboard](docs/dashboard.png) | ![DWIN display](docs/display.jpg) |
+| ![Hardware build](photo5.jpeg) 
 
 **Wiring diagram:**
 
 ![Wiring diagram](connection.svg)
 
-> 💡 GIFs grab the most attention. A short screen recording of the live dashboard updating, or the LEDs changing as you breathe on the MQ-135, makes the project page far more engaging. Tools: ScreenToGif (Windows) for the dashboard, your phone for the hardware.
 
 ---
 
@@ -156,7 +150,7 @@ GET /api/data
 }
 ```
 
-> Note: humidity is **simulated** (temperature-based drift) — there is no dedicated humidity sensor in this build.
+
 
 ---
 
@@ -172,24 +166,6 @@ Values are written using the DGUS II frame format `5A A5 05 82 [AddrHi] [AddrLo]
 
 ---
 
-## 📁 Project Structure
-
-```
-Smart_EMS/
-├── Smart_EMS.ino        # Main ESP32 firmware
-├── README.md
-├── LICENSE              # MIT license
-├── connection.svg       # Wiring diagram
-├── .gitignore
-├── docs/                # (add your photos/GIFs here for the Gallery)
-└── DWIN_Display/        # DWIN display project assets
-    ├── DWIN_SET/        # Compiled display files (icons, fonts, config)
-    ├── TFT/             # TFT image assets
-    ├── 32/, 42/         # Image sources
-    ├── DWprj.hmi        # DWIN project (HMI source)
-    └── DWprj.tft        # Compiled display project
-```
-
 ---
 
 ## 📝 License
@@ -198,14 +174,3 @@ Released under the MIT License — free to use, modify, and distribute. See [`LI
 
 ---
 
-## 🔎 Repository Topics
-
-After pushing to GitHub, open the repo, click the ⚙️ next to **About**, and add these topics to make the project discoverable:
-
-```
-esp32  arduino  iot  air-quality  environmental-monitoring
-dwin  dgus  bmp280  mq135  sensors  web-dashboard  rtc  embedded
-```
-
-Also set the **About** description to something like:
-*"ESP32 environmental monitor — temperature, air quality & noise on a DWIN touch display, LED/buzzer alerts, and a live WiFi dashboard."*
